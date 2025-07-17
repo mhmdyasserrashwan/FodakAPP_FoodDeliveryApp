@@ -9,7 +9,9 @@ class FoodGriditem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          color: Colors.white10, borderRadius: BorderRadius.circular(10)),
+        color: Colors.white60,
+        borderRadius: BorderRadius.circular(10),
+      ),
       child: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Column(
@@ -20,19 +22,19 @@ class FoodGriditem extends StatelessWidget {
               height: 100,
               fit: BoxFit.contain,
             ),
-            SizedBox(
+            const SizedBox(
               height: 8.5,
             ),
             Text(
               food.foodName,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.w600,
               ),
             ),
             Text(
               '\$ ${food.price}',
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w600,
                 color: Colors.deepOrange,

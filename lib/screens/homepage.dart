@@ -9,7 +9,7 @@ class Homepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-          backgroundColor: Colors.white,
+          backgroundColor: Colors.grey[300],
           drawer: const Drawer(
             child: Center(
               child: Column(
