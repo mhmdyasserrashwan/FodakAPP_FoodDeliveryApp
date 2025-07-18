@@ -30,14 +30,16 @@ class FoodGriditem extends StatelessWidget {
               style: const TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.w600,
+                overflow: TextOverflow.ellipsis,
               ),
             ),
             Text(
               '\$ ${food.price}',
               style: const TextStyle(
-                fontSize: 16,
+                fontSize: 12,
                 fontWeight: FontWeight.w600,
                 color: Colors.deepOrange,
+                overflow: TextOverflow.ellipsis,
               ),
             )
           ],
