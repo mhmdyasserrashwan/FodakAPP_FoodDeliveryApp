@@ -2,38 +2,54 @@ class FoodItem {
   final String foodName;
   final String imageUrl;
   final double price;
+  final bool isFavourite;
 
-  FoodItem(
-      {required this.foodName, required this.imageUrl, required this.price});
+  FoodItem({
+    required this.foodName,
+    required this.imageUrl,
+    required this.price,
+    this.isFavourite = false,
+  });
 }
 
 List<FoodItem> food = [
   FoodItem(
-      foodName: 'Beef Burger',
-      imageUrl: 'assets/images/categories/burger.png',
-      price: 5.5),
+    foodName: 'Beef Burger',
+    imageUrl:
+        'https://www.freepnglogos.com/uploads/burger-png/download-hamburger-burger-png-image-png-image-pngimg-15.png',
+    price: 5.5,
+    isFavourite: true,
+  ),
   FoodItem(
-      foodName: 'Chicken Burger',
-      imageUrl: 'assets/images/categories/burger.png',
-      price: 6.5),
+    foodName: 'Chicken Burger',
+    imageUrl: 'https://www.pngarts.com/files/3/Chicken-Burger-PNG-Photo.png',
+    price: 6.5,
+    isFavourite: true,
+  ),
   FoodItem(
       foodName: 'Cheese Burger',
-      imageUrl: 'assets/images/categories/burger.png',
+      imageUrl: 'https://www.pngarts.com/files/3/Chicken-Burger-PNG-Photo.png',
       price: 4.5),
   FoodItem(
       foodName: 'Jucy Lucy Burger',
-      imageUrl: 'assets/images/categories/burger.png',
+      imageUrl:
+          'https://www.freepnglogos.com/uploads/burger-png/download-hamburger-burger-png-image-png-image-pngimg-15.png',
       price: 8.5),
   FoodItem(
-      foodName: 'Pasta',
-      imageUrl: 'assets/images/categories/burger.png',
-      price: 10),
+    foodName: 'Pasta',
+    imageUrl:
+        'https://www.pngall.com/wp-content/uploads/2018/04/Pasta-PNG-Image.png',
+    price: 10,
+    isFavourite: true,
+  ),
   FoodItem(
       foodName: 'Pizza',
-      imageUrl: 'assets/images/categories/burger.png',
+      imageUrl:
+          'https://graficsea.com/wp-content/uploads/2021/12/Chicken-Supreme-Pizza-.png',
       price: 11),
   FoodItem(
       foodName: 'Beef Burger',
-      imageUrl: 'assets/images/categories/burger.png',
+      imageUrl:
+          'https://www.freepnglogos.com/uploads/burger-png/download-hamburger-burger-png-image-png-image-pngimg-15.png',
       price: 5.5),
 ];

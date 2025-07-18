@@ -16,7 +16,7 @@ class FoodGriditem extends StatelessWidget {
         padding: const EdgeInsets.all(12.0),
         child: Column(
           children: [
-            Image.asset(
+            Image.network(
               food.imageUrl,
               width: 100,
               height: 100,
