@@ -34,7 +34,7 @@ class Homepage extends StatelessWidget {
               ),
               itemCount: food.length,
               itemBuilder: (context, index) => FoodGriditem(
-                food: food[index],
+                foodIndex: index,
               ),
             ),
           ],

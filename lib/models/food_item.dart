@@ -10,6 +10,15 @@ class FoodItem {
     required this.price,
     this.isFavourite = false,
   });
+
+  FoodItem copyWith(
+      {String? foodName, String? imageUrl, double? price, bool? isFavourite}) {
+    return FoodItem(
+        foodName: foodName ?? this.foodName,
+        imageUrl: imageUrl ?? this.imageUrl,
+        price: price ?? this.price,
+        isFavourite: isFavourite ?? this.isFavourite);
+  }
 }
 
 List<FoodItem> food = [
@@ -18,13 +27,11 @@ List<FoodItem> food = [
     imageUrl:
         'https://www.freepnglogos.com/uploads/burger-png/download-hamburger-burger-png-image-png-image-pngimg-15.png',
     price: 5.5,
-    isFavourite: true,
   ),
   FoodItem(
     foodName: 'Chicken Burger',
     imageUrl: 'https://www.pngarts.com/files/3/Chicken-Burger-PNG-Photo.png',
     price: 6.5,
-    isFavourite: true,
   ),
   FoodItem(
       foodName: 'Cheese Burger',
@@ -40,7 +47,6 @@ List<FoodItem> food = [
     imageUrl:
         'https://www.pngall.com/wp-content/uploads/2018/04/Pasta-PNG-Image.png',
     price: 10,
-    isFavourite: true,
   ),
   FoodItem(
       foodName: 'Pizza',

@@ -1,10 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:ta_fooddeliveryapp/models/food_item.dart';
 
-class FoodFavouriteCardItem extends StatelessWidget {
-  final FoodItem favCardFoodItem;
-  const FoodFavouriteCardItem({super.key, required this.favCardFoodItem});
+class FoodFavouriteCardItem extends StatefulWidget {
+  //final FoodItem favCardFoodItem;
+  final int favoIndex;
+  const FoodFavouriteCardItem({super.key, required this.favoIndex});
 
+  @override
+  State<FoodFavouriteCardItem> createState() => _FoodFavouriteCardItemState();
+}
+
+class _FoodFavouriteCardItemState extends State<FoodFavouriteCardItem> {
+  final List<FoodItem> favourteitems = food
+      .where(
+        (element) => element.isFavourite == true,
+      )
+      .toList();
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -13,7 +24,7 @@ class FoodFavouriteCardItem extends StatelessWidget {
         child: Row(
           children: [
             Image.network(
-              favCardFoodItem.imageUrl,
+              favourteitems[widget.favoIndex].imageUrl,
               height: 70,
               width: 100,
               fit: BoxFit.contain,
@@ -25,7 +36,7 @@ class FoodFavouriteCardItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  favCardFoodItem.foodName,
+                  favourteitems[widget.favoIndex].foodName,
                   style: const TextStyle(
                     fontSize: 22,
                     fontWeight: FontWeight.w600,
@@ -35,7 +46,7 @@ class FoodFavouriteCardItem extends StatelessWidget {
                   height: 8,
                 ),
                 Text(
-                  '\$ ${favCardFoodItem.price}',
+                  '\$ ${favourteitems[widget.favoIndex].price}',
                   style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w600,
@@ -45,11 +56,20 @@ class FoodFavouriteCardItem extends StatelessWidget {
               ],
             ),
             const Spacer(),
-            const Icon(
-              Icons.favorite,
-              color: Colors.deepOrange,
-              size: 30,
-            ),
+            IconButton(
+                onPressed: () {
+                  setState(() {
+                    final targetItem = favourteitems[widget.favoIndex];
+                    int targetedindex = food.indexOf(targetItem);
+                    food[targetedindex] =
+                        food[targetedindex].copyWith(isFavourite: false);
+                    favourteitems.remove(targetItem);
+                  });
+                },
+                icon: Icon(
+                  Icons.favorite,
+                  color: Colors.deepOrange,
+                ))
           ],
         ),
       ),
