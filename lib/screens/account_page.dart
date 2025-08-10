@@ -37,7 +37,7 @@ class AccountPage extends StatelessWidget {
         leading: Icon(
           icon,
           size: 25,
-          color: Theme.of(context).primaryColor,
+          //color: Theme.of(context).primaryColor,
         ),
         title: Text(title),
         subtitle: subTitle != null ? Text(subTitle) : null,
@@ -85,25 +85,17 @@ class AccountPage extends StatelessWidget {
               orderVoucherItem(name: 'Vouchers', number: 4)
             ],
           ),
-          const Divider(
-            thickness: 1.5,
-            indent: 20,
-            endIndent: 20,
-          ),
+          const Divider(),
           vouchersOrdersHistoryTiles(
-              title: 'Orders History', icon: Icons.shopping_cart),
-          const Divider(
-            thickness: 1.5,
-            indent: 20,
-            endIndent: 20,
+            title: 'Orders History',
+            icon: Icons.shopping_cart,
           ),
+          const Divider(),
           vouchersOrdersHistoryTiles(
-              title: 'Vouchers History', icon: Icons.card_giftcard),
-          const Divider(
-            thickness: 1.5,
-            indent: 20,
-            endIndent: 20,
+            title: 'Vouchers History',
+            icon: Icons.card_giftcard,
           ),
+          const Divider(),
         ],
       ),
     );

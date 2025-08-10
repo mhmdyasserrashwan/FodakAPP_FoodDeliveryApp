@@ -25,11 +25,12 @@ class _FoodGriditemState extends State<FoodGriditem> {
         child: Column(
           children: [
             Stack(
+              alignment: Alignment.topCenter,
               children: [
                 Image.network(
                   food[widget.foodIndex].imageUrl,
-                  width: 100,
-                  height: 100,
+                  // width: MediaQuery.of(context).size.width * 0.1,
+                  height: MediaQuery.of(context).size.height * 0.1,
                   fit: BoxFit.contain,
                 ),
                 Align(
@@ -69,20 +70,16 @@ class _FoodGriditemState extends State<FoodGriditem> {
             ),
             Text(
               food[widget.foodIndex].foodName,
-              style: const TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w600,
-                overflow: TextOverflow.ellipsis,
-              ),
+              style: TextTheme.of(context).titleLarge!.copyWith(
+                    fontFamily: 'OpenSans',
+                    overflow: TextOverflow.ellipsis,
+                  ),
             ),
             Text(
               '\$ ${food[widget.foodIndex].price}',
-              style: TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.w600,
-                color: Theme.of(context).primaryColor,
-                overflow: TextOverflow.ellipsis,
-              ),
+              style: TextTheme.of(context).bodyMedium!.copyWith(
+                  color: Theme.of(context).primaryColor,
+                  fontFamily: 'OpenSans'),
             ),
           ],
         ),

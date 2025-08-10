@@ -25,12 +25,10 @@ class _FavouritePageState extends State<FavouritePage> {
               height: 350,
               fit: BoxFit.cover,
             ),
-            const Text(
+            Text(
               'No favorite food found',
-              style: TextStyle(
-                fontSize: 22,
-              ),
-            )
+              style: TextTheme.of(context).headlineLarge,
+            ),
           ],
         ),
       );

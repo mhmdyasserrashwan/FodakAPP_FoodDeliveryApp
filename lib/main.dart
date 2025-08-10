@@ -14,10 +14,18 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          primaryColor: Colors.deepOrange,
-          listTileTheme: ListTileThemeData(
-            iconColor: Theme.of(context).primaryColor,
-          )),
+        primaryColor: Colors.deepOrange,
+        listTileTheme: ListTileThemeData(
+          iconColor: Colors.deepOrange,
+        ),
+        fontFamily: 'OpenSans',
+        dividerTheme: DividerThemeData(
+          indent: 20,
+          endIndent: 20,
+          thickness: 1.5,
+        ),
+        textTheme: TextTheme(),
+      ),
       home: const BottomNavBarPage(),
     );
   }
