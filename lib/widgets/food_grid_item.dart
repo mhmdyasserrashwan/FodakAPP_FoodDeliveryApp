@@ -53,11 +53,11 @@ class _FoodGriditemState extends State<FoodGriditem> {
                       child: food[widget.foodIndex].isFavourite
                           ? Icon(
                               Icons.favorite,
-                              color: Colors.deepOrange,
+                              color: Theme.of(context).primaryColor,
                             )
                           : Icon(
                               Icons.favorite_border,
-                              color: Colors.deepOrange,
+                              color: Theme.of(context).primaryColor,
                             ),
                     ),
                   ),
@@ -77,10 +77,10 @@ class _FoodGriditemState extends State<FoodGriditem> {
             ),
             Text(
               '\$ ${food[widget.foodIndex].price}',
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 12,
                 fontWeight: FontWeight.w600,
-                color: Colors.deepOrange,
+                color: Theme.of(context).primaryColor,
                 overflow: TextOverflow.ellipsis,
               ),
             ),

@@ -13,6 +13,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+          primaryColor: Colors.deepOrange,
+          listTileTheme: ListTileThemeData(
+            iconColor: Theme.of(context).primaryColor,
+          )),
       home: const BottomNavBarPage(),
     );
   }

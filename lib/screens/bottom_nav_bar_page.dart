@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ta_fooddeliveryapp/screens/account_page.dart';
 import 'package:ta_fooddeliveryapp/screens/favourite_page.dart';
 import 'package:ta_fooddeliveryapp/screens/homepage.dart';
 
@@ -20,9 +21,7 @@ class _BottomNavBarPageState extends State<BottomNavBarPage> {
   List<Widget> bodyOptions = [
     Homepage(),
     FavouritePage(),
-    Center(
-      child: Text('Account Page'),
-    ),
+    AccountPage(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -44,7 +43,12 @@ class _BottomNavBarPageState extends State<BottomNavBarPage> {
           ),
         ),
         appBar: AppBar(
-          title: const Text("El-Ta'aam - Food Delivery"),
+          title: const Text(
+            "Ta'aam - Food Delivery App",
+            style: TextStyle(
+              color: Colors.deepOrange,
+            ),
+          ),
           centerTitle: true,
           backgroundColor: Colors.white,
           foregroundColor: Colors.black,
@@ -55,11 +59,11 @@ class _BottomNavBarPageState extends State<BottomNavBarPage> {
           items: [
             BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
             BottomNavigationBarItem(
-                icon: Icon(Icons.favorite), label: 'favourite'),
+                icon: Icon(Icons.favorite), label: 'Favourite'),
             BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Person'),
           ],
           currentIndex: selectedIndex,
-          selectedItemColor: Colors.deepOrange,
+          selectedItemColor: Theme.of(context).primaryColor,
           onTap: onBottomNavBarTap,
         ),
       ),
